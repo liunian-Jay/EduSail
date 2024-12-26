@@ -46,8 +46,10 @@ export default {
         });
         const data = await response.json();
 
+        console.log("Response Data:", data);
+
         // 模拟从接口获取的聊天消息
-        const botMessage = { text: data.reply, sender: "bot" };
+        const botMessage = { text: data.res, sender: "bot" };
         messages.value.push(botMessage);
       } catch (error) {
         const errorMessage = { text: "Error connecting to the server", sender: "bot" };
