@@ -10,7 +10,7 @@ def test_route():
         test = data.get('test')
 
         # 调用推理服务
-        result = {"res": test, "prediction": '你好'}
+        result = {"res": test, "prediction": 'hello'}
         return jsonify(result), 200
     except Exception as e:
         return jsonify(error=str(e)), 500
