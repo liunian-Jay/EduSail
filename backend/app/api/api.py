@@ -3,7 +3,7 @@ from flask import Blueprint, request, jsonify
 test = Blueprint('test', __name__)
 
 @test.route('/test', methods=['POST'])
-def test():
+def test_route():
     try:
         # 从请求中获取数据
         data = request.get_json()

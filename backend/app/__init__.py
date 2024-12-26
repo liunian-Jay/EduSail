@@ -1,6 +1,6 @@
 from flask import Flask
 from .config import Config
-from .api import api_blueprints
+from .api.api import test as api_test
 
 def create_app():
     app = Flask(__name__)
@@ -9,7 +9,6 @@ def create_app():
     app.config.from_object(Config)
     
     # 注册API蓝图
-    for blueprint in api_blueprints:
-        app.register_blueprint(blueprint)
+    app.register_blueprint(api_test, url_prefix='/test')
     
     return app
